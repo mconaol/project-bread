@@ -1,13 +1,13 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Show ({bread}) {
- // console.log(bread.name)
+let index
+
+function Show ({bread, index}) {
     return (
       <Default>
         <h2>Show Page</h2>
         <h3>{bread.name}</h3>
-        <img src={bread.image} alt={bread.name}/>
   <p>
     and it
     {
@@ -18,9 +18,17 @@ function Show ({bread}) {
     have gluten.
   </p>
   <img src={bread.image} alt={bread.name} />
+
+  
+  <form action={`/breads/${index} ? method=DELETE`} method= "POST">
+    <input type='submit' value="DELETE"/>
+  </form>
+  
   <li><a href="/breads">Go home</a></li>
 </Default>
     )
   }
+
+ 
 
 module.exports = Show
