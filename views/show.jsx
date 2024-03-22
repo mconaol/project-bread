@@ -20,7 +20,7 @@ function Show ({bread, index}) {
   <img src={bread.image} alt={bread.name} />
 
   
-  <form action={`/breads/${index} ? method=DELETE`} method= "POST">
+  <form action={`/breads/${index}?method=DELETE`} method= "POST">
     <input type='submit' value="DELETE"/>
   </form>
   
